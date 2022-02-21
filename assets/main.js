@@ -32,6 +32,7 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
+    isOption: false,
     songs : [
         {
             name: 'Chúng ta của hiện tại',
@@ -86,7 +87,7 @@ const app = {
     render: function() {
         const htmls = this.songs.map((song, index) => {
             return `
-            <div class="song ${index === this.currentIndex ? 'active' : ''}">
+            <div class="song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
                 <div class="thumb"
                     style="background-image: url('${song.img}')">
                 </div>
@@ -96,6 +97,12 @@ const app = {
                 </div>
                 <div class="option">
                     <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="option-box">
+                    <ul class="option-list">
+                        <li class="fas fa-trash-alt"></li>
+                        <li class="fas fa-heart"></li>
+                    </ul>
                 </div>
             </div>
             `
@@ -199,6 +206,25 @@ const app = {
                 audio.play()
             } else {
                 nextBtn.click()
+            }
+        }
+        //listen to clicking at playlist
+        playlist.onclick = function(e) {
+            const songNode = e.target.closest('.song:not(.active)')
+            console.log(songNode)
+
+            if (songNode) {
+                // _this.currentIndex = Number(songNode.dataset.index)
+                _this.currentIndex = Number(songNode.getAttribute('data-index'))
+                _this.loadCurrentSong()
+                _this.render()
+                audio.play()
+            }
+            const option = e.target.closest('.option')
+            if (option) {             
+                const optionBox = $(`div[data-index="${songNode.dataset.index}"] .option-box`)
+                console.log(optionBox)
+                optionBox.classList.add('active')
             }
         }
 

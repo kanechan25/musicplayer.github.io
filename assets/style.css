@@ -44,6 +44,7 @@
     width: 100%;
     max-width: 480px;
     border-bottom: 1px solid #ebebeb;
+    z-index: 999;
   }
   
   /* HEADER */
@@ -131,6 +132,7 @@
   .icon-play {
       padding-left: 4px;
   }
+ 
   
   /* PLAYLIST */
   .playlist {
@@ -153,7 +155,7 @@
   }
   
   .song:active {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   
   .song.active .option,
@@ -189,5 +191,34 @@
     padding: 16px 8px;
     color: #999;
     font-size: 18px;
+    z-index: 99;
+    cursor: pointer;
   }
+
+  .option-box {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    right: 19px;
+    padding: 6px;
+    margin-bottom: 66px;
+    display: none;
+  }
+  .option-box.active {
+      display: block;
+  }
+  .option-list {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: auto;
+  }
+  .option-list li {
+    padding-top: 4px;
+  }
+  .fa-trash-alt {
+    margin-left: 1px;
+  }
+
   
