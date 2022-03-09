@@ -1,4 +1,4 @@
-## Hi, I'm Khoa Tran <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"> - BIM Technologist - Developer 
+## Hi, I'm Khoa Tran <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">  BIM Technologist - Web Developer 
 ## <a href="https://kanechan25.github.io/musicplayer.github.io/" target="_blank" rel="noopener noreferrer" title="https://kanechan25.github.io/musicplayer.github.io/">Go to my Music Player App</a>
 - It's written by HTML + CSS + JS
   <img src="https://github.com/kanechan25/musicplayer.github.io/blob/main/img/music-player-demo.gif">
